@@ -7,19 +7,29 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
+import be.alessian.taosmixins.common.CommonProxy;
+
+@Mod(modid = Tags.MODID,
+     version = Tags.VERSION,
+     name = Tags.MODNAME,
+     acceptedMinecraftVersions = "[1.12.2]",
+     acceptableRemoteVersions = "*",
+     serverSideOnly = true)
 public class TaosMixins {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
+
+    @EventHandler
+    public void onConstruction(FMLConstructionEvent event) {
+        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(CommonProxy.class);
+    }
 
     @EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc. (Remove if not needed)
@@ -27,6 +37,7 @@ public class TaosMixins {
         // register to the event bus so that we can listen to events
         MinecraftForge.EVENT_BUS.register(this);
         LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
+        CommonProxy.preInit();
     }
 
     @SubscribeEvent
@@ -43,11 +54,15 @@ public class TaosMixins {
 
     @EventHandler
     // load "Do your mod setup. Build whatever data structures you care about." (Remove if not needed)
-    public void init(FMLInitializationEvent event) {}
+    public void init(FMLInitializationEvent event) {
+        CommonProxy.init();
+    }
 
     @EventHandler
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
-    public void postInit(FMLPostInitializationEvent event) {}
+    public void postInit(FMLPostInitializationEvent event) {
+        CommonProxy.postInit();
+    }
 
     @EventHandler
     // register server commands in this event handler (Remove if not needed)

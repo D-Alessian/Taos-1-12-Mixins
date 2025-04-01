@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+import be.alessian.taosmixins.config.TaosMixinsConfig;
 import de.erdbeerbaerlp.dcintegration.common.Discord;
 
 /**
@@ -24,7 +25,7 @@ public abstract class DiscordMixin {
                        target = "Lnet/dv8tion/jda/api/JDABuilder;createDefault(Ljava/lang/String;)Lnet/dv8tion/jda/api/JDABuilder;"))
     private JDABuilder redirectCreateDefault(String originalToken) {
         String token = System.getProperty("discord.botToken");
-        if (token == null || token.isEmpty()) {
+        if (token == null || token.isEmpty() || !TaosMixinsConfig.Serverside.discordIntegration) {
             token = originalToken;
         }
         return JDABuilder.createDefault(token);
