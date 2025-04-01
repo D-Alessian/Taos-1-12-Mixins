@@ -1,7 +1,8 @@
 <h1 align="center">Tao's 1.12 Mixins</h1>
 <p align="center"><i>A simple mod to fix/tweak mod behaviors to what I want them to be like.</i></p>
 <h1 align="center">
-    <a href="https://github.com/D-Alessian/Taos-1-12-Mixins/blob/master/LICENSE"><img src="https://img.shields.io/github/license/D-Alessian/Taos-1-12-Mixins?style=for-the-badge" alt="License"></a>
+    <a href="https://github.com/D-Alessian/Taos-1-12-Mixins/blob/master/LICENSE"><img src="https://img.shields.io/github/license/D-Alessian/Taos-1-12-Mixins" alt="License"></a>
+    <a href="https://github.com/D-Alessian/Taos-1-12-Mixins/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained Status"></a>
 </h1>
 
 ## Welcome to Taos 1.12 Mixins
