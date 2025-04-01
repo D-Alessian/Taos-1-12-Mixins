@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -14,29 +15,26 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import be.alessian.taosmixins.common.CommonProxy;
+import be.alessian.taosmixins.config.TaosMixinsConfig;
 
 @Mod(modid = Tags.MODID,
      version = Tags.VERSION,
      name = Tags.MODNAME,
      acceptedMinecraftVersions = "[1.12.2]",
-     acceptableRemoteVersions = "*",
-     serverSideOnly = true)
+     acceptableRemoteVersions = "*")
 public class TaosMixins {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
-
-    @EventHandler
-    public void onConstruction(FMLConstructionEvent event) {
-        MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.register(CommonProxy.class);
-    }
 
     @EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc. (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
         // register to the event bus so that we can listen to events
         MinecraftForge.EVENT_BUS.register(this);
-        LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
+        ConfigManager.sync(Tags.MODID, net.minecraftforge.common.config.Config.Type.INSTANCE);
+        if (TaosMixinsConfig.Advanced.activateVerboseLogging) {
+            LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
+        }
         CommonProxy.preInit();
     }
 

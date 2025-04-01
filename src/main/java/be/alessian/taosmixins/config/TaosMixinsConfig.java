@@ -1,26 +1,30 @@
 package be.alessian.taosmixins.config;
 
 import net.minecraftforge.common.config.Config;
+import com.cleanroommc.configanytime.ConfigAnytime;
 
 import be.alessian.taosmixins.Tags;
 
 @Config(modid = Tags.MODID, name = Tags.MODID, category = "")
 public class TaosMixinsConfig {
 
-    @Config.Comment("Server side config")
-    @Config.Name("server")
-    public static Serverside serverside = new Serverside();
+    @Config.Comment("Advanced configs")
+    @Config.Name("advanced")
+    public static Advanced advanced = new Advanced();
 
-    public static class Serverside {
+    public static class Advanced {
 
         @Config.Comment({
-                "Enable the discord integration mixin.",
-                "This will enable the discord integration mixin, which allow using systemProperty for the bot token.",
-                "If you don't know what this is, don't enable it.",
-                "[Default: true]"
+                "Activate verbose logging.",
+                "This will enable verbose logging for the mod.",
+                "This is useful for debugging and development.",
+                "[Default: false]"
         })
-        @Config.Name("discord integration")
+        @Config.Name("advanced")
         @Config.RequiresMcRestart
-        public static boolean discordIntegration = true;
+        public static boolean activateVerboseLogging = true;
+    }
+    static {
+        ConfigAnytime.register(TaosMixinsConfig.class);
     }
 }
