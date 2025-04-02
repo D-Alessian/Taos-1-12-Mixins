@@ -2,8 +2,6 @@ package be.alessian.taosmixins.config;
 
 import net.minecraftforge.common.config.Config;
 
-import com.cleanroommc.configanytime.ConfigAnytime;
-
 import be.alessian.taosmixins.Tags;
 
 @SuppressWarnings({ "CanBeFinal", "unused" })
@@ -25,9 +23,5 @@ public class TaosMixinsConfig {
         @Config.Name("activateVerboseLogging")
         @Config.RequiresMcRestart
         public boolean activateVerboseLogging = true;
-    }
-
-    static {
-        ConfigAnytime.register(TaosMixinsConfig.class);
     }
 }

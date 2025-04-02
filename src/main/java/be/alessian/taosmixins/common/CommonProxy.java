@@ -11,15 +11,8 @@ import be.alessian.taosmixins.config.TaosMixinsConfig;
 @Mod.EventBusSubscriber(modid = Tags.MODID)
 public class CommonProxy {
 
-    public static void preInit() {}
-
-    public static void init() {}
-
-    public static void postInit() {}
-
     @SubscribeEvent
     public static void syncConfigValues(ConfigChangedEvent.OnConfigChangedEvent event) {
-        // Print a confirmation message to the terminal
         if (TaosMixinsConfig.advanced.activateVerboseLogging) {
             System.out.println("Config changed: " + event.getModID());
         }

@@ -1,14 +1,4 @@
 // Add any additional repositories for your dependencies here
 
 repositories {
-    maven { // Mixin Maven Fix
-        url = 'https://repo.spongepowered.org/maven'
-    }
-    maven {  // Autoconfig and Autosave
-        name 'Mod Maven'
-        url 'https://modmaven.dev'
-    }
-    maven {
-        url 'https://maven.cleanroommc.com'
-    }
 }
