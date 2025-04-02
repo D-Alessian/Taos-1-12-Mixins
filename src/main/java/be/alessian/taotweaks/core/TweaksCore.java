@@ -1,23 +1,18 @@
 package be.alessian.taotweaks.core;
 
+import java.util.List;
 import java.util.Map;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
-import org.spongepowered.asm.launch.MixinBootstrap;
-import org.spongepowered.asm.mixin.MixinEnvironment;
-import org.spongepowered.asm.mixin.Mixins;
+import com.google.common.collect.ImmutableList;
+import be.alessian.taotweaks.Tags;
+import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 @IFMLLoadingPlugin.Name("TaoTweaksCore")
 @IFMLLoadingPlugin.MCVersion("1.12.2")
 @IFMLLoadingPlugin.TransformerExclusions({ "be.alessian.taotweaks.core" })
-public class TweaksCore implements IFMLLoadingPlugin {
-
-    public TweaksCore() {
-        MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.taotweaks.json");
-        MixinEnvironment.getDefaultEnvironment().setObfuscationContext("searge");
-    }
+public class TweaksCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public String[] getASMTransformerClass() {
@@ -40,5 +35,11 @@ public class TweaksCore implements IFMLLoadingPlugin {
     @Override
     public String getAccessTransformerClass() {
         return null;
+    }
+
+    @Override
+    public List<String> getMixinConfigs() {
+        return ImmutableList.of(
+                "mixins." + Tags.MODID + ".json");
     }
 }
