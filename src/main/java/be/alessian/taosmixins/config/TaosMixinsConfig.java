@@ -21,6 +21,6 @@ public class TaosMixinsConfig {
         })
         @Config.Name("activateVerboseLogging")
         @Config.RequiresMcRestart
-        public boolean activateVerboseLogging = true;
+        public boolean activateVerboseLogging = false;
     }
 }
