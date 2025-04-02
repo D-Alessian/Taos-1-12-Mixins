@@ -1,12 +1,12 @@
 package be.alessian.taotweaks.mixin.discordintegration;
 
-import be.alessian.taotweaks.config.TweaksConfig;
 import net.dv8tion.jda.api.JDABuilder;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+import be.alessian.taotweaks.config.TweaksConfig;
 import de.erdbeerbaerlp.dcintegration.common.Discord;
 
 /**

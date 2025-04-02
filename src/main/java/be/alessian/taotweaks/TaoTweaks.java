@@ -1,6 +1,5 @@
 package be.alessian.taotweaks;
 
-import be.alessian.taotweaks.config.TweaksConfig;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
@@ -13,6 +12,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import be.alessian.taotweaks.config.TweaksConfig;
 
 @Mod(modid = Tags.MODID,
      version = Tags.VERSION,
