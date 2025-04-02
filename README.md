@@ -41,6 +41,7 @@ Reminder: no feature requests please. I will only spend time implementing featur
 You can use it however you want. Just make sure to credit me if you use my code in your own project.
 Fork it, modify it, do whatever you want. Just make sure to mention me.
 ## Credited Works
-README template by [GregTechCEu](https://github.com/GregTechCEu/GregTech)
+- README template by [GregTechCEu](https://github.com/GregTechCEu/GregTech)
+- For code inspiration [Nomi-Labs](https://github.com/Nomi-CEu/Nomi-Labs) & [ZBGT](https://github.com/Zorbatron/ZBGT)
 
 See something I forgot to credit? Open an issue and ask for appropriate credit, I will happily mark it here
