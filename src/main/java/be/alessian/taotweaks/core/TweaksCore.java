@@ -1,4 +1,4 @@
-package be.alessian.taosmixins.core;
+package be.alessian.taotweaks.core;
 
 import java.util.Map;
 
@@ -8,14 +8,14 @@ import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.MixinEnvironment;
 import org.spongepowered.asm.mixin.Mixins;
 
-@IFMLLoadingPlugin.Name("TaosMixinsCore")
+@IFMLLoadingPlugin.Name("TaoTweaksCore")
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-@IFMLLoadingPlugin.TransformerExclusions({ "be.alessian.taosmixins.core" })
-public class TaosMixinsCore implements IFMLLoadingPlugin {
+@IFMLLoadingPlugin.TransformerExclusions({ "be.alessian.taotweaks.core" })
+public class TweaksCore implements IFMLLoadingPlugin {
 
-    public TaosMixinsCore() {
+    public TweaksCore() {
         MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.taosmixins.json");
+        Mixins.addConfiguration("mixins.taotweaks.json");
         MixinEnvironment.getDefaultEnvironment().setObfuscationContext("searge");
     }
 

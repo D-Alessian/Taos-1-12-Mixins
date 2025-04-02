@@ -1,13 +1,17 @@
 <h1 align="center">Tao's 1.12 Mixins</h1>
 <p align="center"><i>A simple mod to fix/tweak mod behaviors to what I want them to be like.</i></p>
 <h1 align="center">
-    <a href="https://github.com/D-Alessian/Taos-1-12-Mixins/blob/master/LICENSE"><img src="https://img.shields.io/github/license/D-Alessian/Taos-1-12-Mixins" alt="License"></a>
-    <a href="https://github.com/D-Alessian/Taos-1-12-Mixins/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained Status"></a>
+    <a href="https://github.com/D-Alessian/Taos-1-12-Tweaks/blob/master/LICENSE"><img src="https://img.shields.io/github/license/D-Alessian/Taos-1-12-Tweaks" alt="License"></a>
+    <a href="https://github.com/D-Alessian/Taos-1-12-Tweaks/graphs/commit-activity"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained Status"></a>
 </h1>
 
-## Welcome to Taos 1.12 Mixins
+## Welcome to Taos 1.12 Tweaks!
 ### What is This?
-The idea is simply to mixin features that I find are either fixes to inactive or outdated mods, or features that I find are missing from the original mod I'm modifying but that don't fit into the original mod.
+This is a mod for Minecraft 1.12.2 that adds mixins to other mods. It is not a standalone mod, and it requires other mods to work. It is not a replacement for the original mod, and it does not add any new features to the game. It is just a way to modify the behavior of other mods.
+### Why Did I Make This?
+A lot of mods in 1.12.2 are outdated and no longer maintained. Some of them have bugs that are never going to be fixed, and some of them have features that I don't like. This mod is a way to fix those bugs and change those features without having to wait for the original mod to be updated.
+
+This also can implement features that I want, but the original mod doesn't have. This is not a replacement for the original mod, and it does not add any new features to the game. It is just a way to modify the behavior of other mods.
 ### What is a Mixin?
 A mixin is a way to modify the behavior of other mods without modifying the original mod's code. This allows to fix bugs for a mod that isn't being maintained anymore, or to add features that the original mod doesn't have.
 

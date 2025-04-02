@@ -1,6 +1,6 @@
 {
-  "package": "be.alessian.taosmixins.mixin",
-  "refmap": "mixins.taosmixins.refmap.json",
+  "package": "be.alessian.taotweaks.mixin",
+  "refmap": "mixins.taotweaks.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

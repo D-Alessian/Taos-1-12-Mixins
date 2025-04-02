@@ -1,11 +1,11 @@
-package be.alessian.taosmixins.config;
+package be.alessian.taotweaks.config;
 
 import net.minecraftforge.common.config.Config;
 
-import be.alessian.taosmixins.Tags;
+import be.alessian.taotweaks.Tags;
 
 @Config(modid = Tags.MODID)
-public class TaosMixinsConfig {
+public class TweaksConfig {
 
     @Config.Comment("Advanced configs")
     @Config.Name("advanced")

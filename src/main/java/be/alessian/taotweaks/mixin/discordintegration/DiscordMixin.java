@@ -1,12 +1,12 @@
-package be.alessian.taosmixins.mixin.discordintegration;
+package be.alessian.taotweaks.mixin.discordintegration;
 
+import be.alessian.taotweaks.config.TweaksConfig;
 import net.dv8tion.jda.api.JDABuilder;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import be.alessian.taosmixins.config.TaosMixinsConfig;
 import de.erdbeerbaerlp.dcintegration.common.Discord;
 
 /**
@@ -25,7 +25,7 @@ public abstract class DiscordMixin {
                        target = "Lnet/dv8tion/jda/api/JDABuilder;createDefault(Ljava/lang/String;)Lnet/dv8tion/jda/api/JDABuilder;"))
     private JDABuilder redirectCreateDefault(String originalToken) {
         String token = System.getProperty("discord.botToken");
-        if (TaosMixinsConfig.advanced.activateVerboseLogging && token != null && !token.isEmpty()) {
+        if (TweaksConfig.advanced.activateVerboseLogging && token != null && !token.isEmpty()) {
             System.out.println("Discord bot token received");
         }
         if (token == null || token.isEmpty()) {
