@@ -4,8 +4,7 @@ import net.minecraftforge.common.config.Config;
 
 import be.alessian.taosmixins.Tags;
 
-@SuppressWarnings({ "CanBeFinal", "unused" })
-@Config(modid = Tags.MODID, name = Tags.MODID, category = "")
+@Config(modid = Tags.MODID)
 public class TaosMixinsConfig {
 
     @Config.Comment("Advanced configs")
