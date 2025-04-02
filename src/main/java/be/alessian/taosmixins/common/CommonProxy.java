@@ -1,13 +1,12 @@
 package be.alessian.taosmixins.common;
 
-import static be.alessian.taosmixins.config.TaosMixinsConfig.Advanced;
-
 import net.minecraftforge.common.config.*;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import be.alessian.taosmixins.Tags;
+import be.alessian.taosmixins.config.TaosMixinsConfig;
 
 @Mod.EventBusSubscriber(modid = Tags.MODID)
 public class CommonProxy {
@@ -21,7 +20,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void syncConfigValues(ConfigChangedEvent.OnConfigChangedEvent event) {
         // Print a confirmation message to the terminal
-        if (Advanced.activateVerboseLogging) {
+        if (TaosMixinsConfig.advanced.activateVerboseLogging) {
             System.out.println("Config changed: " + event.getModID());
         }
         if (event.getModID().equals(Tags.MODID)) {

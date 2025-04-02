@@ -1,10 +1,12 @@
 package be.alessian.taosmixins.config;
 
 import net.minecraftforge.common.config.Config;
+
 import com.cleanroommc.configanytime.ConfigAnytime;
 
 import be.alessian.taosmixins.Tags;
 
+@SuppressWarnings({ "CanBeFinal", "unused" })
 @Config(modid = Tags.MODID, name = Tags.MODID, category = "")
 public class TaosMixinsConfig {
 
@@ -20,10 +22,11 @@ public class TaosMixinsConfig {
                 "This is useful for debugging and development.",
                 "[Default: false]"
         })
-        @Config.Name("advanced")
+        @Config.Name("activateVerboseLogging")
         @Config.RequiresMcRestart
-        public static boolean activateVerboseLogging = true;
+        public boolean activateVerboseLogging = true;
     }
+
     static {
         ConfigAnytime.register(TaosMixinsConfig.class);
     }

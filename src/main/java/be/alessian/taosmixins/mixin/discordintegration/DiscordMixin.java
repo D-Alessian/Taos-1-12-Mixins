@@ -25,7 +25,7 @@ public abstract class DiscordMixin {
                        target = "Lnet/dv8tion/jda/api/JDABuilder;createDefault(Ljava/lang/String;)Lnet/dv8tion/jda/api/JDABuilder;"))
     private JDABuilder redirectCreateDefault(String originalToken) {
         String token = System.getProperty("discord.botToken");
-        if (TaosMixinsConfig.Advanced.activateVerboseLogging && token != null && !token.isEmpty()) {
+        if (TaosMixinsConfig.advanced.activateVerboseLogging && token != null && !token.isEmpty()) {
             System.out.println("Discord bot token received");
         }
         if (token == null || token.isEmpty()) {

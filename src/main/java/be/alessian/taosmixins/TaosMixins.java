@@ -31,8 +31,9 @@ public class TaosMixins {
     public void preInit(FMLPreInitializationEvent event) {
         // register to the event bus so that we can listen to events
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(CommonProxy.class);
         ConfigManager.sync(Tags.MODID, net.minecraftforge.common.config.Config.Type.INSTANCE);
-        if (TaosMixinsConfig.Advanced.activateVerboseLogging) {
+        if (TaosMixinsConfig.advanced.activateVerboseLogging) {
             LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
         }
         CommonProxy.preInit();
